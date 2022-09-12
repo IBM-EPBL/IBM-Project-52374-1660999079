@@ -50,7 +50,15 @@ body{
    grid-column: 1/-1;
    border-radius: 10px 10px 0px 0px;
    overflow: hidden;
-   background-color: rgb(51, 137, 222);
+/*    background-color: rgb(51, 137, 222); */
+    
+   opacity:0.8;
+   background-image: linear-gradient(#6ba1ee 0.8px, transparent 0.2px),
+                     linear-gradient(90deg, #6ba1ee 0.8px, transparent 0.1px),
+                     linear-gradient(#ffffff 0.3px, transparent 0.8px),
+                     linear-gradient(90deg, #ffffff 0.3px, #008cff 1px);
+   background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+   background-position: -3px -3px, -3px -3px, -1.5px -1.5px, -1.5px -1.5px;
 }
 .display-picture{
     grid-row: 2/4;
