@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script> 
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+     <!-- font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            margin-top:2rem;
+        }
+        .image-section{
+            width:90%;
+            padding:2rem;
+            height:auto;
+            background-color:rgb(255, 255, 255);
+            border-radius:1rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            overflow:hidden;
+        }
+        .hero{
+            background-color: #eb84aa;
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .person{
+            align-items: center;
+            justify-content: center;
+            width:400px;
+            border-radius:1rem;
+            padding:40px;
+            margin:10px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        .person h4{
+            color:rgb(27, 26, 26);
+        }
+        img{
+            height:100px;
+            width:100px;
+            border-radius:50%;
+        }
+        a{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        i{
+            margin-left:5px;
+            color:black;
+        }
+        .person{
+            background: linear-gradient(-45deg, #e98d71, #e2cad3, #8de0ff, #95d688);
+            background-size: 400% 400%;
+            animation: gradient 12s ease infinite;
+        }
+  
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        body{
+            background-color: aquamarine;
+        }
+  
+    </style>
+
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
+    <div class="container-fluid">
+     <span class="navbar-brand mb-0 h1">Flask Application</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('signin') }}">Signin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('about') }}">About us</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+       <div class="image-section">
+            <div class="hero">
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='dharun.jpg') }}" alt=""/>
+                    <h4>Dharun</h4>
+                    <a href="https://github.com/DharunAnandan"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person2">
+                    <img src="{{ url_for('static',filename='hari.jpg') }}" alt="">
+                    <h4>Hariharan</h4>
+                    <a href="https://github.com/Hariharan1727"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='vichu.jpg') }}" alt="">
+                    <h4>Visweswaran</h4>
+                    <a href="https://github.com/ViswesWaran2001"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='siva.jpg') }}" alt="">
+                    <h4>Sivaprakash</h4>
+                    <a href="https://github.com/Sivaprakash-San"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='aravindh.jpg') }}" alt="">
+                    <h4>Aravindh</h4>
+                    <a href="http://github.com/aravindh-mb"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+
+            </div>
+       </div>
+    </div>
+</body>
+</html>

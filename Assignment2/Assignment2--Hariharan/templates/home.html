@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script> 
+         
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
+            <div class="container-fluid">
+             <span class="navbar-brand mb-0 h1">Flask Application</span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="{{ url_for('home') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('signin') }}">Signin</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About us</a>
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <style>
+            body {
+                background: rgb(23,11,232);
+                background: radial-gradient(circle, rgba(23,11,232,1) 17%, rgba(11,197,233,1) 96%);
+              }
+            .container{
+                width: 250px;
+                height: 200px;
+                
+                background: redradial-gradient(circle, rgba(23,11,232,1) 17%, rgba(11,197,233,1) 96%);;
+                animation: mymove 10s infinite;
+              }
+            @keyframes mymove {
+                0%{background: redradial-gradient(circle, rgba(23,11,232,1) 17%, rgba(11,197,233,1) 96%);}
+                10%{background-color: #DDA0DD;}
+                20%{background-color: #662d91;}
+                30%{background-color: #800080;}
+                40%{background-color: #E6E6FA;}
+                50%{background-color: #720e9e;}
+                65%{background-color:#662d91;}
+                80%{background-color: #33006F;}
+            }
+            #code{
+                margin:auto;
+                /* position:relative; */
+                width:300%; 
+                right:215px; 
+                border: 5px solid black;
+                border-style: groove;
+                box-shadow:black;
+                border-radius: 5px ;
+                     
+            }
+            .text{
+                position:absolute;
+                bottom:9%;
+                color:white;
+                margin: auto;
+                }
+            .text h1{
+/* new */
+                text-align: center;
+                margin: auto;
+                font-size:170px;
+                line-height:160px;
+                /* margin-left:-10px; */
+                color:transparent;
+                
+                -webkit-text-stroke:1px #fff;
+                background:url("./back.png");
+                -webkit-background-clip: text;
+                background-position:0 0;
+                animation:back 20s linear infinite;
+            }
+            @keyframes back{
+                100%{
+                    background-position:2000px 0;
+            }
+        }
+      
+      .css{
+          position: absolute;
+          height:300px;
+          width:670px;
+          background-color: #e5e5f7;
+         opacity: 0.2;
+         z-index: -1;
+           background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+      }
+      .decoration{
+        z-index:-3;
+        opacity:0.1;
+        height:670px;
+        position: absolute;
+        top:0px;
+        left: -20px;
+        
+    }
+            </style>
+            <center>
+            <div class="container">
+           <h1>WELCOME</h1>
+            <img id="code" src="https://c.tenor.com/7LAB1WbMURAAAAAd/website.gif">
+         
+            </div>
+            <div class="text">
+                <h1 id="welcome">WELCOME</h1>
+            </div>
+            
+
+
+            <div class="css">
+
+            </div>
+        </center>
+        
+            <img class="decoration" src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjcyNi0wMzAuanBn.jpg">
+        
+       
+    </body>
+</html>
+
