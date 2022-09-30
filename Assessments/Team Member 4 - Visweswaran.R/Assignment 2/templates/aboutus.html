@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+     <!-- font awesome -->
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            margin-top:2rem;
+        }
+        .image-section{
+            width:90%;
+            padding:2rem;
+            height:auto;
+            background-color:rgb(255, 255, 255);
+            border-radius:1rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            overflow:hidden;
+        }
+        .hero{
+            background-color: #eb84aa;
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .person{
+            align-items: center;
+            justify-content: center;
+            width:400px;
+            border-radius:1rem;
+            padding:40px;
+            margin:10px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        .person h4{
+            color:rgb(27, 26, 26);
+        }
+        img{
+            height:100px;
+            width:100px;
+            border-radius:50%;
+        }
+        a{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        i{
+            margin-left:5px;
+            color:black;
+        }
+        .person{
+            background: linear-gradient(-45deg, #e98d71, #e2cad3, #8de0ff, #95d688);
+            background-size: 400% 400%;
+            animation: gradient 12s ease infinite;
+        }
+  
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        body{
+            background-color: aquamarine;
+        }
+  
+    </style>
+    <div class="container">
+       <div class="image-section">
+            <div class="hero">
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='dharun.jpg') }}" alt=""/>
+                    <h4>Dharun</h4>
+                    <a href="https://github.com/DharunAnandan"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person2">
+                    <img src="{{ url_for('static',filename='hari.jpg') }}" alt="">
+                    <h4>Hariharan</h4>
+                    <a href="https://github.com/Hariharan1727"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='vichu.jpg') }}" alt="">
+                    <h4>Visweswaran</h4>
+                    <a href="https://github.com/ViswesWaran2001"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='siva.jpg') }}" alt="">
+                    <h4>Sivaprakash</h4>
+                    <a href="https://github.com/Sivaprakash-San"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                <div class="person person1">
+                    <img src="{{ url_for('static',filename='aravindh.jpg') }}" alt="">
+                    <h4>Aravindh</h4>
+                    <a href="http://github.com/aravindh-mb"><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+
+            </div>
+       </div>
+    </div>
+</body>
+</html>
