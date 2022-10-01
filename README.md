@@ -4,7 +4,7 @@
 | **Application Name** | News Tracker Application |
 |:---------------------:|:------------------------------:|
 |        **Category**      |  Cloud Application Development |
-|        **Team ID**        |  .............. |
+|        **Team ID**        |  PNT2022TMID47037 |
 
 # Team Members :
 |  **Title**  |      **Name**     |
