@@ -26,6 +26,13 @@ As our lives are very busy these days, we often feel we need more than 24 hrs. a
 ## Technical Architecture :
 ![Technical architecture diagram](https://lh4.googleusercontent.com/WxV5D1L-EMl3jnFqZS9L9w9oFOkzbID-ACQyYIyzvrAYaUxp-Ry_tbCPd9xG0YKPhV97C3yayncVX49Lnbv9tJE1O7SzpvhWtCADTaikdF-aKo2Ie7JOld9iysZB8R0tzDvUthOx)
 
+## Project Workflow :
+
+ - The user interacts with the application.
+
+ - Registers by giving the details.
+
+ - Integrate the application with news APIs and store the data in the database.
+
+ - The database will have all the details and the user can search the news by using a search bar.
  
-
-
