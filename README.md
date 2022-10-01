@@ -7,13 +7,13 @@
 |        **Team ID**        |  PNT2022TMID47037 |
 
 # Team Members :
-|  **Title**  |      **Name**     |
+|   **Title**   |      **Name**     |
 |:-----------:|:-----------------:|
-| Team Leader |    **DHARUN A**   |
-| Team Member |   **ARAVINDH A**  |
-| Team Member |  **HARIHARAN B**  |
-| Team Member | **SIVAPRAKASH S** |
-| Team Member | **VISWESWARAN R** |
+| Team Leader   |    **DHARUN A**   |
+| Team Member 1 |   **ARAVINDH A**  |
+| Team Member 2 |  **HARIHARAN B**  |
+| Team Member 3 | **SIVAPRAKASH S** |
+| Team Member 4 | **VISWESWARAN R** |
 
 ## Required Skills :
  ![Tux, the Linux mascot](https://img.icons8.com/color/48/40C057/html-5--v1.png)   ![Tux, the Linux mascot](https://img.icons8.com/fluency/48/000000/css3.png) ![Tux, the Linux mascot](https://img.icons8.com/fluency/48/000000/javascript.png) ![Tux, the Linux mascot]( https://img.icons8.com/color/48/000000/kubernetes.png) ![Tux, the Linux mascot](https://img.icons8.com/color/48/000000/docker.png)  ![Tux, the Linux mascot](https://img.icons8.com/fluency/48/000000/python.png)  ![Tux, the Linux mascot]( https://img.icons8.com/ios-filled/50/000000/flask.png) ![Tux, the Linux mascot](https://img.icons8.com/nolan/64/ibm.png)
