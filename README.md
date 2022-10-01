@@ -1,7 +1,7 @@
 
 # IBM-Project-52374-1660999079
 
-| **Application Name** | News Tracker Application |
+|      **Project Name**     | News Tracker Application |
 |:---------------------:|:------------------------------:|
 |         **Domain**        |  Cloud Application Development |
 |        **Team ID**        |  PNT2022TMID47037 |
