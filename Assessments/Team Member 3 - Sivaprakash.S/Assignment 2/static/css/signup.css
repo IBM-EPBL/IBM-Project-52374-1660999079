@@ -1,0 +1,146 @@
+section {
+    margin-left: 10%;
+    margin-top: -5%;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.card {
+
+    box-shadow: 0 4px 8px 0 rgb(237, 253, 8);
+    transition: 0.3s;
+    min-height: 500px;
+    min-width: 500px;
+    background: -webkit-linear-gradient(bottom, rgb(255, 127, 80), rgb(255, 255, 0));
+
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgb(237, 253, 8);
+}
+
+section .contentBx {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 4% 15%;
+    background: -webkit-linear-gradient(bottom, #a5af15, #b4c013);
+    background-repeat: no-repeat;
+    width: 50%;
+
+}
+
+
+section .contentBx .formBx {
+    width: 50%;
+    padding: 0px 20px;
+    margin: auto;
+}
+
+
+section .contentBx .formBx h2 {
+    color: rgb(2, 2, 2);
+    font-weight: 600;
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: 30px;
+    font-size: 25px;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx {
+    margin-bottom: 20px;
+
+}
+
+
+section .contentBx .formBx .inputBx span {
+    margin-bottom: 5px;
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 5px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+
+}
+
+section .contentBx .formBx .inputBx input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 2px solid rgb(240, 240, 240);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    background: white;
+    border-radius: 30px;
+
+}
+
+section .contentBx .formBx .inputBx input a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    margin-left: 210px;
+    background: rgb(8, 78, 170);
+    color: rgb(230, 230, 230);
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    width: 40%;
+    margin-left: 30%;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"] {
+    margin-left: 25px;
+    background: rgb(8, 78, 170);
+    color: rgb(240, 240, 240);
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    width: 40%;
+    margin-left: 30%;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+    background: rgb(19, 4, 236);
+}
+
+#head {
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-top: 45px;
+    margin-left: 250px;
+    text-align: center;
+
+
+}
+
+section .contentBx .formBx .remember {
+
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 18px;
+    margin-top: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
