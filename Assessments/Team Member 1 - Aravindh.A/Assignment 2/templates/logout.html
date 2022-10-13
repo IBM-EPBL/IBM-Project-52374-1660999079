@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/logout.css')}}">
+</head>
+
+<body background="{{ url_for('static',filename='img/bg1.jpg') }}"
+  style="background-repeat:norepeat; background-size: cover;">
+
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Welcome!</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signin">Signin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Signup</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          <li>
+            <a class="nav-link active" id="logout" href="/">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <center>
+    <h2>You have successfully logged in!</h2>
+  </center>
+</body>
+
+</html>

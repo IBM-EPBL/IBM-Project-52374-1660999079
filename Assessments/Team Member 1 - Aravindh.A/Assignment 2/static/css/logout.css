@@ -1,0 +1,19 @@
+#logout {
+
+    margin-left: 1500%;
+}
+
+h2 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 22%;
+    margin-top: 10%;
+    font-size: 50px;
+    font-family: 'Cookie', cursive;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    background: linear-gradient(rgb(255, 255, 0), rgb(255, 127, 80));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
