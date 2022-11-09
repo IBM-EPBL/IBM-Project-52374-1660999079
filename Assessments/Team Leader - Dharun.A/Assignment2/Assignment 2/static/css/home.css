@@ -1,0 +1,105 @@
+body {
+    background: rgb(23, 11, 232);
+    background: radial-gradient(circle, rgba(23, 11, 232, 1) 17%, rgba(11, 197, 233, 1) 96%);
+}
+
+.container {
+    width: 250px;
+    height: 200px;
+
+    background: redradial-gradient(circle, rgba(23, 11, 232, 1) 17%, rgba(11, 197, 233, 1) 96%);
+    ;
+    animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+    0% {
+        background: redradial-gradient(circle, rgba(23, 11, 232, 1) 17%, rgba(11, 197, 233, 1) 96%);
+    }
+
+    10% {
+        background-color: #DDA0DD;
+    }
+
+    20% {
+        background-color: #662d91;
+    }
+
+    30% {
+        background-color: #800080;
+    }
+
+    40% {
+        background-color: #E6E6FA;
+    }
+
+    50% {
+        background-color: #720e9e;
+    }
+
+    65% {
+        background-color: #662d91;
+    }
+
+    80% {
+        background-color: #33006F;
+    }
+}
+
+#code {
+    margin: auto;
+    width: 300%;
+    right: 215px;
+    border: 5px solid black;
+    border-style: groove;
+    box-shadow: black;
+    border-radius: 5px;
+
+}
+
+.text {
+    position: absolute;
+    bottom: 9%;
+    color: white;
+    margin: auto;
+}
+
+.text h1 {
+
+    text-align: center;
+    margin: auto;
+    font-size: 170px;
+    line-height: 160px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background:url("{{ url_for('static',filename='img/back.png') }}");
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+.css {
+    position: absolute;
+    height: 300px;
+    width: 670px;
+    background-color: #e5e5f7;
+    opacity: 0.2;
+    z-index: -1;
+    background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+}
+
+.decoration {
+    z-index: -3;
+    opacity: 0.1;
+    height: 670px;
+    position: absolute;
+    top: 0px;
+    left: -20px;
+
+}

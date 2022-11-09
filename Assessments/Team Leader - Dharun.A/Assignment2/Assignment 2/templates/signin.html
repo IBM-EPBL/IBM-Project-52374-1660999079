@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/signin.css')}}">
+</head>
+
+<body background="{{ url_for('static',filename='img/bg1.jpg') }}"
+  style="background-repeat:norepeat; background-size: cover;">
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Welcome!</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/signin">Signin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/aboutus">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <div class="contentBx">
+      <div class="card">
+        <div class="formBx">
+
+          <h2>Login</h2>
+          <form action="{{ url_for('signin') }}" method="post">
+
+            <div class="inputBx">
+              <span>Username</span>
+              <input type="text" name="username" id="username" aria-describedby="usernameHelp"
+                placeholder="Enter Username" required class="form-control">
+            </div>
+            <div>
+              <img>
+            </div>
+
+            <div class="inputBx">
+              <span>Password</span>
+              <input type="password" name="password" id="password" placeholder="Enter password" required
+                class="form-control">
+            </div>
+            <div class="remember">
+              <input type="checkbox" id="rem1" name="" value="">
+              <label for="rem1">Remember me</label><br>
+            </div>
+
+            {% if error %}
+            <div class="alert alert-danger">
+              {{error}}
+            </div>
+            {% endif %}
+
+            <div class="inputBx">
+              <input type="submit" value="Signin" name="signin">
+            </div>
+
+            <div class="inputBx">
+              <p id="da">Don't have an account?<a href="/signup">SignUp</a></p>
+            </div>
+          </form>
+  </section>
+</body>
+
+</html>
