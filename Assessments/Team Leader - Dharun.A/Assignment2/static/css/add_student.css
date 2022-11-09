@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+  background:linear-gradient(to right,dodgerBlue,rgb(51, 185, 229));
+  /* display:flex; */
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+    margin-bottom:5px;
+}
+.form-container,.form{
+    text-align: center;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background:linear-gradient(to left , rgb(49, 47, 42),rgb(0, 0, 0));
+    width:350px;
+    border-radius:10px;
+    margin: 5% 30% 4% 30%;
+}
+.form-container{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin-top:4%;
+    height:auto;
+}
+
+span{
+    margin-top:5px;
+}
+input,textarea{
+    accent-color: rgb(252, 146, 24);
+    border: transparent;
+    margin:8px;
+    border:none;
+    outline:none;
+    padding:10px;
+    border-radius:5px;
+    color:orange;
+}
+
+#username,#add,#city,#pin{
+    width:280px;
+}
+input[type=submit]{
+    background-color:orange;
+    color:white;
+    font-size: 14px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight:600;
+    cursor: pointer;
+    margin-top:30px;
+}
