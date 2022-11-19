@@ -100,5 +100,5 @@ bucket video link
 
 **Client:** HTML, CSS, BOOTSTRAP5, JavaScript
 
-**Server:** Flask
+**Server:** Flask, Nginx
 
