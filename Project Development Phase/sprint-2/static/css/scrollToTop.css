@@ -1,0 +1,31 @@
+
+html{
+    scroll-behavior: smooth;
+    }
+    
+    #myBtn {
+    width:30px;
+    height:30px;
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      right: 30px;
+      z-index: 99;
+      /* font-size: 18px; */
+      border: none;
+      outline: none;
+      background-color: dodgerBlue;
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+      align-items:center;
+      justify-content:center;
+      padding:10px;
+      transition:0.8s;
+      
+ 
+    }
+    
+    #myBtn:hover {
+      background-color:dodgerBlue;
+    }

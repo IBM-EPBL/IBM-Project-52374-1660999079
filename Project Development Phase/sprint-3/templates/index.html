@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Tracker</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/scrollToTop.css')}}">
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/21fadd9069.js" crossorigin="anonymous"></script>
+
+  <!-- icons8 -->
+  <link rel="shortcut icon" href="https://img.icons8.com/3d-fluency/100/000000/globe-africa.png" type="image/x-icon">
+
+  <!-- scroll Reveal -->
+  <script src="https://unpkg.com/scrollreveal@4"></script>
+</head>
+
+<body class="col-lg-12 col-12 position-absolute z-index-0">
+  <!-- NAvbar -->
+  <nav class="navbar sticky shadow-strong container-fluid col-12">
+    <div class="">
+      <span class="navbar-brand mb-0 h1">
+        <img
+          src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-bull-horn-contact-us-flaticons-flat-flat-icons.png"
+          alt="" width="30" height="24">
+        News Tracker </span>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-4 col-lg-12 col-12 col-md-12">
+    <div id="carouselExampleCaptions" class="carousel slide rounded carousel-white sm-4" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+          aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <img
+            src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/crime-image.jpg"
+            class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Crime News</h3>
+            <p>If crime is cool, then why are jails so full?</p>
+          </div>
+        </div>
+        <div class="carousel-item rounded">
+          <img src="https://cloud-object-storage-18-cos-standard-yx0.s3.jp-tok.cloud-object-storage.appdomain.cloud/futbol-lyudi-muzhchiny-sport-20947.jpeg" class="d-block w-100"
+            alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Sports News</h3>
+            <p>Playing sports like there is no tomorrow.</p>
+          </div>
+        </div>
+        <div class="carousel-item rounded">
+          <img
+            src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/education.jpg"
+            class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Education News</h3>
+            <p>The only weapon to fight injustice is Education.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/politics.jpg"
+            class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Politics News</h3>
+            <p>If you don’t Vote you lose the right to complain.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- coursal End -->
+    <style>
+
+    </style>
+    <div class="container-fluid col-12 mb-1">
+      <!-- detail-row -->
+      <div class="catagories h-auto">
+        <!-- detailbox detailbox-1 -->
+        <h1 class="text-greys m-auto d-flex justify-content-center">Catagories</h1>
+        <div class="m-auto mb-2 col-12 ">
+          <div class="d-grid gap-2 col-12 col-lg-6 col-md-6 mx-auto">
+            <div class="news-container">
+              <div
+                class="cover-image col-12 col-lg-6 col-md-8 m-auto d-flex row align-items-center justify-content-center">
+                <img src="{{url_for('static',filename='img/health-category.png')}}" alt="">
+              </div>
+            </div>
+            <button class="news-btn btn btn-primary  p-4 mb-3" type="button"><a href="/healthnews" class="text-white">
+                <h5>Health</h5>
+              </a></button>
+
+
+            <div class="news-container">
+              <div
+                class="cover-image col-12 col-lg-6 col-md-8 m-auto d-flex row align-items-center justify-content-center">
+                <img src="{{url_for('static',filename='img/weather-category.png')}}" alt="">
+              </div>
+            </div>
+            <button class="news-btn btn btn-danger  p-4 mb-3" type="button"><a href="/weathernews" class="text-white">
+                <h5>Weather</h5>
+              </a></button>
+
+            <div class="news-container">
+              <div
+                class="cover-image col-12 col-lg-4 col-md-7 m-auto d-flex row align-items-center justify-content-center">
+                <img src="{{url_for('static',filename='img/education-category.png')}}" alt="">
+              </div>
+            </div>
+            <button class="news-btn btn btn-info  p-4 mb-3" type="button"><a href="/education" class="text-white">
+                <h5>Education</h5>
+              </a></button>
+
+            <div class="news-container">
+              <div
+                class="cover-image col-12 col-lg-5 col-md-6 m-auto d-flex row align-items-center justify-content-center">
+                <img src="{{url_for('static',filename='img/sports-category.png')}}" alt="">
+              </div>
+            </div>
+            <button class="news-btn btn btn-success  p-4 mb-3" type="button"><a href="/sportsnews" class="text-white">
+                <h5>Sports</h5>
+              </a></button>
+
+            <div class="news-container">
+              <div
+                class="cover-image col-12 col-lg-5 col-md-8 m-auto d-flex row align-items-center justify-content-center">
+                <img src="{{url_for('static',filename='img/medical_research-category.png')}}" alt="">
+              </div>
+            </div>
+            <button class="news-btn btn btn-warning  p-4 mb-3" type="button"><a href="/sciencenews" class="text-white">
+                <h5>science</h5>
+              </a></button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <script src="./Application features/offlinedetection.js"></script>
+
+      <!-- =========================toast=================================== -->
+      <!-- <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="runSpeechRecognition();">Show live toast</button> -->
+
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 10000;">
+        <div id="liveToast" class="toast hide bg-primary text-white" role="alert" aria-live="assertive"
+          aria-atomic="true">
+          <div class="toast-header bg-primary text-white">
+            <img style="width:20px;"
+              src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-bull-horn-contact-us-flaticons-flat-flat-icons.png"
+              class="rounded me-2" alt="...">
+            <strong class="me-auto">News Tracker Application</strong>
+            <small id="small">Home page</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            You can select and search news you want read 🎉!
+          </div>
+        </div>
+      </div>
+
+
+      <div class="top-headlines d-flex align-items-center w-3">
+       
+        <h1 class="d-flex justify-content-center m-auto mt-5 mb-5 headlines">Today's Headlines</h1>
+        <span> <img class="  mt-5 mb-3" src="https://img.icons8.com/cotton/64/000000/sent.png"/></span>
+     </div>
+
+      {% for data in responseData.articles %}
+
+      <div class="news-container col-12 ">
+        <div class="card mb-8 g-3" style="margin-bottom:20px;">
+          <div class="row g-8 image-container-div" id="cardBody">
+            <div class="col-md-4 ">
+              <img src="{{data.urlToImage}}" class="img-fluid rounded-start rounded-end"
+                style="width: 500px;background-size: 700px 150px;align-items: center;"
+                alt="{{data.urlToImage}} News Tracker Application" />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-primary">{{data.title}}</h5>
+                <p class="card-text">{{data.description}}</p>
+                <p class="card-text">{{data.content}}</p>
+                <p class="card-text">
+                  <small class="text-muted">
+                    {% set date = data.publishedAt | replace("T", " ") %}
+                    Last updated on - {{date | replace("Z", " ")}}</small>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-dark"><a class="text-white readmore" href="{{data.url}}" target="_blank">Read
+                      more <i class="fa-solid fa-arrow-right"></i></a>
+                  </span>
+                  <!-- <i class="fa fa-whatsapp text-success" aria-hidden="true">share</i> -->
+                  <div class="share-group" id="share-group">
+                    <a href="https://api.whatsapp.com/send?text={{data.url}} Read more article😊! just click the link. For more further News keep connected to the *News Tracker Application* Thank you🎉"
+                      data-action="share/whatsapp/share" target="_blank"><img class="me-3" style="height:30px;"
+                        src="https://img.icons8.com/color/48/null/whatsapp--v1.png" alt="wh-share" /></a>
+                    <!-- <button  id="webShare">
+                      <img class="me-2" src="https://img.icons8.com/material/24/null/share-rounded.png" alt="share"
+                     >btn
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class=" d-flex justify-content-center m-auto mb-8 mt-3" style="border-radius:8px;border:2px solid black;width:190px;" >
+          <a  href="/TopHeadlines"><img class="ms-3" src="https://img.icons8.com/nolan/64/us-news.png" width="25"/>More headlines</a>
+      </div>
+      
+
+      <script>
+        var btn = document.getElementById("liveToastBtn");
+        var element = document.getElementById("liveToast");
+
+        // Create toast instance
+        var myToast = new bootstrap.Toast(element);
+
+        myToast.show();
+        window.addEventListener("load", function () {
+
+        })
+      </script>
+      <!-- ===============toastEnd====================================================== -->
+
+      <!-- scroll to top -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593;</button>
+
+      <script src="{{url_for('static',filename='ApplicationFeatures/watson Assistant/watson.js')}}"></script>
+
+      <script src="{{url_for('static',filename='ApplicationFeatures/scrollReveal.js')}}"></script>
+</body>
+
+</html>

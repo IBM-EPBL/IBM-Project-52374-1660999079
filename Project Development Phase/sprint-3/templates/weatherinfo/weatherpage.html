@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="hsl(24.3, 97.4%, 54.3%)">
+
+    <!-- Toast -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- for wider screen devices   " -->
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)"
+        href="{{url_for('static',filename='css/weather/desktop.css')}}">
+
+    <!-- for mobile phones -->
+    <link rel="stylesheet" media="screen and (max-device-width: 600px)"
+        href="{{url_for('static',filename='css/weather/mobile.css')}}" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+
+    <!-- Font Awesome (Content Delivery Network) -->
+    <script src="https://kit.fontawesome.com/21fadd9069.js" crossorigin="anonymous"></script>
+
+    <!-- css animated  -->
+    <link rel="stylesheet" href="../animatedbackground.css">
+
+    <!-- sweet alert -->
+    <script
+        src="{{url_for('static',filename='ApplicationFeatures/sweetalert-2.1.2/package/dist/sweetalert.min.js')}}"></script>
+
+    <!-- Open Graph for SEO-->
+    <!-- title -->
+    <meta property="og:title" content="Weather Application Management System" />
+
+    <!-- scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+
+    <!-- OG type -->
+    <meta property="og:type" content="website" />
+
+    <!-- OG discription -->
+    <meta property="og:type" content="weather app brings current weather Updates, and best UI" />
+
+
+    <title>weather</title>
+</head>
+
+<body>
+    <!-- for menu icon -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <!-- all items -->
+    <div class="container">
+        <!-- page header -->
+        <nav class="headers">
+            <!-- menue -->
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- <a href="https://github.com/aravindh-mb">GitHub</a> -->
+                <!-- <a href="https://www.instagram.com/webdevfrontend/">Instagram</a> -->
+                <a href="https://openweathermap.org/">Open Weather API</a>
+            </div>
+            <div class="title">
+                <img src="../assets/logo.png" alt="">
+                <h2 class=" title news-container">Weather by News Tracker</h2>
+            </div>
+
+
+        </nav>
+        <!--------------------------------------------------------------------------------------------------------------->
+        <!-- search container -->
+        <div class="searchcontainer">
+            <div class="search">
+                <div class="text">
+                    <input type="text" placeholder="Search by city or country..." id="search" autocomplete="off"
+                        value="chennai">
+                </div>
+                <div class="voice">
+                    <img id="weathermic" style="width:35px;margin-top:10px;"
+                        src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/mic%20green.png"
+                        alt="voice icon">
+                </div>
+                <div class="go">
+                    Search</div>
+                <div id="action"
+                    style="color: rgb(193, 64, 3);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;transition: 0.9s;">
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------------------------------------------------------------ -->
+        <div class="gridcontainer">
+            <!-- boxes and items -->
+            <div class="boxes ">
+                <div class="box_1 news-container">
+                    <h4>Your Info</h4>
+                    <ul>
+                        <br><br>
+                        <li><i class="fa-solid fa-compass"></i>Latitude &nbsp;&nbsp;&nbsp;&nbsp;:<span
+                                id="locationLatitude" style="color:green;">&nbsp; Loading...</span> </li>
+                        <br>
+                        <li><i class="fa-solid fa-location-dot"></i>Longitude :<span id="locationLongitude"
+                                style="color:green;">&nbsp; Loading...</span></li>
+                    </ul>
+                </div>
+
+
+                <div class="box_2 news-container">
+                    <h4>Temprature</h4>
+
+                    <h1 id="celsius">0<sup>o</sup> C</h1>
+                    <h3 id="description">Description</h3>
+                </div>
+
+                <div class="box_2 news-container">
+                    <h4>Search location info</h4>
+                    <br><br>
+                    <h1 id="region">loading....</h1>
+                </div>
+
+                <div class="box_2 news-container">
+                    <h4>Zone</h4>
+                    <h2 id="country">Loading...</h2>
+                    <br>
+                    <h2 id="zone">Loading...</h2>
+                    <br>
+                    <h2 id="lastUpdated">Loading...</h2>
+                </div>
+
+
+                <div class="box_2 news-container">
+                    <h4>Wind Direction</h4>
+                    <br><br>
+                    <h1 id="windDirection">Loading...</h1>
+                </div>
+
+                <div class="box_4 news-container">
+                    <h4>Pressure</h4>
+                    <img
+                        src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/1.png">
+                    <h1 id="pressure">0</h1>
+
+                </div>
+                <div class="box_5 news-container">
+                    <h4>Wind Speed</h4>
+                    <img src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/windspeed.png"
+                        alt="img">
+                    <h1 id="windspeed">0</h1>
+                </div>
+
+                <div class="box_2 news-container">
+                    <h4>Humidity</h4>
+                    <img src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/humidity.png"
+                        alt="ds">
+                    <h1 id="humidity">0</h1>
+                </div>
+            </div>
+        </div>
+        <!--  --------------------------------------------------------->
+        <!-- google maps for the place  -->
+    </div>
+    <!-- container end -->
+
+    <!-- animated background  -->
+    <div class="header">
+        <!--Waves Container-->
+        <div class="wave">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+    </div>
+    <!--Header ends-->
+
+    <!--Content starts-->
+    <div class="content flex">
+
+        <div class="pages">
+            <h3 style="color:black;">Pages</h3>
+            <hr>
+            <ul>
+                <li><i class="fa-solid fa-house" style="color:rgb(57, 168, 57);"></i><a href="/home">Home</a> </li>
+                <li><i class="fa-solid fa-message" style="color: rgb(201, 147, 47);"></i><a
+                        href="/TopHeadlines">News</a></li>
+            </ul>
+        </div>
+        <br>
+        <div class="team">
+            <h3 style="color:black;">Team</h3>
+            <p style="color:black"> Developed By <span style="color: green;font-weight: 700;font-family:'Segoe UI'">News
+                    Tracker Application Team</span> </p>
+            <p style="color: grey; margin:auto;font-size:10px;margin-top:20px;">University College of Engineering
+                Thirukkuvalai</p>
+        </div>
+    </div>
+    <!--Content ends-->
+
+    <!-- offline detection -->
+    <script src="{{url_for('static',filename='ApplicationFeatures/weather/offline detection.js')}}"></script>
+    <!-- voice recognition js file  -->
+    <script src="{{url_for('static',filename='ApplicationFeatures/weather/voice-recognition.js')}}"></script>
+
+    <script src="{{url_for('static',filename='ApplicationFeatures/weather/js.js')}}"></script>
+
+    <script src="{{url_for('static',filename='ApplicationFeatures/weather/vibrate.js')}}"></script>
+
+    <script src="{{url_for('static',filename='ApplicationFeatures/weather/notification.js')}}"></script>
+
+    <script src="{{url_for('static',filename='ApplicationFeatures/weather/webshare.js')}}"></script>
+
+    <script src="{{url_for('static',filename='ApplicationFeatures/scrollReveal.js')}}"></script>
+
+</body>
+
+</html>

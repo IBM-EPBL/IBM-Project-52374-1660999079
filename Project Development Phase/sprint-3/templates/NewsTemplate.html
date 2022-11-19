@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- favicon -->
+  <link rel="shortcut icon"
+    href="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-bull-horn-contact-us-flaticons-flat-flat-icons.png"
+    type="image/x-icon">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="dodgerBlue" />
+
+  <!-- css file  -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/NewsTemplate.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/scrollToTop.css')}}">
+  <!-- darkmode css -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/darkmode.css')}}" />
+
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/21fadd9069.js" crossorigin="anonymous"></script>
+
+  <!-- Toast -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- scroll Reveal -->
+  <script src="https://unpkg.com/scrollreveal@4"></script>
+
+  <title>{% block title %}{{returned_input_search_value}}{% endblock %} news 🔎</title>
+</head>
+
+<body class="document-body container-12">
+  <div class="progress" id="progress"></div>
+  <!-- ================================== navbar STARTS ================================================ -->
+  <nav class="navbar sticky-top shadow-5-strong container-fluid col-12 p-2" id="navbar">
+    <div class="container-fluid d-flex justify-content-between">
+
+      <span class="navbar-brand mb-0 h1">
+        <img
+          src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-bull-horn-contact-us-flaticons-flat-flat-icons.png"
+          alt="" width="30" height="24" />
+        <a href="/home">News Tracker Application</a>
+      </span>
+
+      <span class="voicerecognition d-flex justify-content-around m-auto">
+        <form action="/searchResults" method="post">
+
+          <i class="fa fa-search" aria-hidden="true"></i>
+
+          <input type="text" class="searchinput" placeholder="Search News" id="searchinput"
+            value="{{returned_input_search_value}}" name="searchvalue" />
+
+          <i class="fa fa-microphone" id="mic" onclick="runSpeechRecognition()"></i>
+        </form>
+
+      </span>
+
+      <!-- <div class="form-check form-switch mt-2 m-auto">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+        <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
+      dark mode -->
+      <div class="m-auto mt-3">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
+          <i class="fas fa-moon"></i>
+          <i class='fas fa-sun'></i>
+          <div class='ball'>
+        </label>
+      </div>
+    </div>
+
+    </div>
+  </nav>
+  <!--======== navbar ENDS =============================================================-->
+
+  <div class="container-fluid col-12">
+    <!-- ===================************main content STARTS***************** ===============-->
+    <main class="main-content col-sm-12">
+      <!--============================ Start Iterating API response ====================-->
+      {% block body %}
+      <div class="results d-flex justify-content-between align-items-center">
+        <div class="result-button-group ">
+          <button type="button" class="btn btn-primary position-relative mt-5 mb-3">
+            We found {{result_count}} Results
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{result_count}}
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </button>
+
+
+        </div>
+
+        <!-- <a href="/redirectToHome"><button type="button"  class="btn btn-dark mt-5 mb-3"><i class="fa fa-home me-2"></i>Home</button></a> -->
+      </div>
+
+      {% for data in responseData.articles %}
+
+      <div class="news-container col-12 ">
+        <div class="card mb-8 g-3" style="margin-bottom:20px;">
+          <div class="row g-8 image-container-div" id="cardBody">
+            <div class="col-md-4 ">
+              <img src="{{data.urlToImage}}" class="img-fluid rounded-start rounded-end"
+                style="width: 500px;background-size: 700px 150px;align-items: center;"
+                alt="{{data.urlToImage}} News Tracker Application" />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-primary">{{data.title}}</h5>
+                <p class="card-text">{{data.description}}</p>
+                <p class="card-text">{{data.content}}</p>
+                <p class="card-text">
+                  <small class="text-muted">
+                    {% set date = data.publishedAt | replace("T", " ") %}
+                    Last updated on - {{date | replace("Z", " ")}}</small>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-dark"><a class="text-white readmore" href="{{data.url}}" target="_blank">Read
+                      more <i class="fa-solid fa-arrow-right"></i></a>
+                  </span>
+                  <!-- <i class="fa fa-whatsapp text-success" aria-hidden="true">share</i> -->
+                  <div class="share-group" id="share-group">
+                    <a href="https://api.whatsapp.com/send?text={{data.url}} Read more article😊! just click the link. For more further News keep connected to the *News Tracker Application* Thank you🎉"
+                      data-action="share/whatsapp/share" target="_blank"><img class="me-3" style="height:30px;"
+                        src="https://img.icons8.com/color/48/null/whatsapp--v1.png" alt="wh-share" /></a>
+
+                    <!-- <button  id="webShare">
+                      <img class="me-2" src="https://img.icons8.com/material/24/null/share-rounded.png" alt="share"
+                     >btn
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        <!--============================ Ending Iterating API response ====================-->
+      </div>
+      <!-- ===================************main content ENDS***************** ===============-->
+    </main>
+  </div>
+  <!--============================================================ Model==== -->
+  <!--======= Model Ends============================================================ -->
+
+  <!--=========================================================== footer starts -->
+  <footer
+    class="footer-section navbar z-index-2 shadow-5-strong  col-12 p-1 container-fluid position-fixed bottom-0  h-8 "
+    id="tabfooter">
+    <div class="d-flex justify-content-around text-black col-12  p-2">
+
+      <div class="elementx"><a href="/redirectHome" onclick="vibrate(100)"><i class="elements fa fa-home me-3" onclick="tabUser()"></i></a>
+      </div>
+      <button class="tabsearch" onclick="myFunc()">
+        <div><a onclick="vibrate(100)"><i class="elements fa fas fab fa-searchengin me-3"></i></a></div>
+      </button>
+      <div><a><i class="elements fa fas fas fa-share-alt me-3" id="tabsharebtn"></i></a></div>
+      <div><a href="/weather" onclick="vibrate(100)"><i class="elements fas fas fas fa-cloud-moon-rain me-3" id="weather"></i></a></div>
+      <div><a href="/aboutus" onclick="vibrate(100)"><i class="elements fas fa-users me-3" id="tababoutus"></i></a></div>
+      <div><a href="/tabuser" onclick="vibrate(100)"><i class="elements fa fas fas fa-user-circle me-3"></i></a></div>
+    </div>
+  </footer>
+  <!-- ======================================Footer End========================================== -->
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11;">
+    <div id="liveToast" class="toast hide bg-primary text-white" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-primary text-white">
+        <img style="width:20px;"
+          src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-bull-horn-contact-us-flaticons-flat-flat-icons.png"
+          class="rounded me-2" alt="...">
+        <strong class="me-auto">News Tracker Application</strong>
+        <small id="small">New</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Showing results based on {{returned_input_search_value}}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var btn = document.getElementById("liveToastBtn");
+    var elementa = document.getElementById("liveToast");
+
+    // Create toast instance
+    var myToast = new bootstrap.Toast(elementa);
+
+    window.addEventListener("load", function () {
+      myToast.show();
+    })
+  </script>
+
+  {% endblock %}
+
+  <!-- scroll to top -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593;</button>
+
+  <!-- ================JAVASCRIPT LINKS======================== -->
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/voicerecognition.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/webshare.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/weatherAccess.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/notification.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/tooltip.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/offlinedetection.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/navbaranim.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/bottomTabnavbar.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/darkmode.js')}}"></script>
+
+  <script
+    src="{{url_for('static',filename='ApplicationFeatures/sweetalert-2.1.2/package/dist/sweetalert.min.js')}}"></script>
+
+  <script src="{{url_for('static',filename='ApplicationFeatures/scrollReveal.js')}}"></script>
+
+</body>
+
+</html>

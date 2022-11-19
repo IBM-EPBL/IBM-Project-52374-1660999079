@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="dodgerBlue" />
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/signup.css')}}">
+
+    <!-- scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon"
+        href="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-bull-horn-contact-us-flaticons-flat-flat-icons.png"
+        type="image/x-icon">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- auth -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+        content="391958191168-12u2a5rforh0sgq8t9v2skiqkqprp48b.apps.googleusercontent.com">
+
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <title>signup</title>
+
+</head>
+
+<body>
+    <p>{{msg}}</P>
+    <div class="container-fluid news-container overflow-hidden">
+        <section class="login-block">
+            <div class="container-fluid">
+                <div class="row  ">
+                    <div class="col-sm-12 d-flex align-items-center justify-content-evenly flex-wrap">
+
+                        <div class="section2 col-lg-6 col-12 m-auto">
+                            <form class="md-float-material form-material col-12" action="/signUpFormData" method="post">
+                                <div class="auth-box card">
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="">
+                                                <h3 class="text-center heading head mb-4">News Tracker Application</h3>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-primary"> <input type="text"
+                                                class="form-control form-floating" name="userName" 
+                                                placeholder="Name" id="first_name" required spellcheck="false" autocomplete="off">
+                                        </div>
+
+                                        <div class="form-group form-primary ">
+                                            <input type="text" class="form-control" name="userEmail" 
+                                                placeholder="Email" id="email" required spellcheck="false" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                        </div>
+                                        <div class="form-group form-primary">
+                                            <input type="password" class="form-control" name="userPassword"
+                                                placeholder="Password" id="password" required spellcheck="false" autocomplete="off">
+                                        </div>
+                                        <div class="form-group form-primary">
+                                            <input type="password" class="form-control" name="userPasswordConfirm"
+                                                placeholder="Confirm password" id="password_confirm" required spellcheck="false" autocomplete="off">
+                                        </div>
+                                        <div class="form-group form-primary">
+                                            <input type="number" class="form-control" name="userMobile"
+                                                placeholder="Mobile Number" id="mobile_number" required spellcheck="false" autocomplete="off" pattern="[7-9]{1}[0-9]{9}">
+                                        </div>
+                                        <div class="form-group form-primary">
+                                            <p><b>Select a Picture for Profile</b></p>
+                                            <input type="file" class="form-control" name="picture"
+                                             id="profile_pic">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12"> <input type="submit"
+                                                    class="btn btn-primary btn-md btn-block waves-effect text-center col-12"
+                                                    name="submit" value="Signup" />
+                                            </div>
+                                        </div>
+                                        <div class="or-container">
+                                            <div class="line-separator"></div>
+                                            <div class="or-label">or</div>
+                                            <div class="line-separator"></div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-12 " style="border: none;" id="login"> <a href="/home"
+                                                    class="btn btn-lg btn-google btn-block text-capitalize btn-outline  col-12 bg-black text-white"><img
+                                                        src="https://img.icons8.com/color/48/000000/google-logo.png"
+                                                        class="btn-g"> Signin
+                                                    Using Google </a> </div>
+                                        </div>
+                                    </div> <br>
+                                    <!-- <?= base_url() ?>auth/login -->
+                                    <p class="text-inverse text-center">Already have an account? <a href="/login"
+                                            data-abc="true">Login</a></p>
+
+                                    <!-- <scri>
+                                            function onSignIn(googleUser) {
+                                                alert("hello")
+                                                var profile = googleUser.getBasicProfile();
+                                                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                                                console.log('Name: ' + profile.getName());
+                                                console.log('Image URL: ' + profile.getImageUrl());
+                                                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                                            }
+                                        </scri> -->
+                                </div>
+                        </div>
+
+                        <div class="section1 col-7 col-lg-6 ms-9 d-flex mt-4 col-12 mockup-grp">
+                            <img class=" me-5 mockup news-container" style="width:230px;height:490px;transform:rotate(-15deg);" src="https://cloud-object-storage-18-cos-standard-yx0.s3.jp-tok.cloud-object-storage.appdomain.cloud/mobile-portrait-health.png" alt="mockup">
+                            <img class=" me-5 mockup news-container" style="width:230px;height:490px;transform:rotate(15deg);" src="https://cloud-object-storage-18-cos-standard-yx0.s3.jp-tok.cloud-object-storage.appdomain.cloud/mobile-portrait-home.png" alt="mockup">
+                            <!-- <img class="ms-7 mockup news-container" style="width:230px;height:490px;transform:rotate(15deg);margin-right:50px;" src="{{url_for('static',filename='img/mobile-portrait-home.png')}}" alt="mockup"> -->
+                        </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+
+    <!-- Firebase Auth  -->
+    <script src="{{url_for('static',filename='ApplicationFeatures/firebaseAuth.js')}}"></script>
+
+    <script src="{{url_for('static',filename='ApplicationFeatures/scrollReveal.js')}}"></script>
+
+</body>
+
+</html>
