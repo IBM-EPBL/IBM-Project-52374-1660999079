@@ -1,0 +1,5 @@
+flask 
+requests
+ibm_db
+sendgrid
+bcrypt

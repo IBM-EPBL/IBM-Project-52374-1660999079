@@ -1,0 +1,190 @@
+/* *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    height:auto;
+} */
+.progress {
+  background-color: rgb(78, 76, 76);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  z-index: 1000;
+}
+html {
+  -webkit-animation-delay: 0.2;
+          animation-delay: 0.2;
+          scroll-behavior: smooth;
+}
+/* To remove up down arrow bottons in number input field */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0px;
+}
+.cardBody{
+  opacity: 0;
+}
+body {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+  overflow-x: hidden;
+}
+body.dark {
+  background-color: #292c35;
+}
+/*!=================================== nav section starts ======================*/
+nav {
+  z-index: 2;
+  background-color: rgba(255, 254, 254, 0.597);
+  backdrop-filter: blur(60px);
+  /* width:auto; */
+}
+.navbar-brand {
+  font-family: "Inter", sans-serif;
+  background: -webkit-linear-gradient(
+    130deg,
+    hsl(280, 91%, 61%),
+    rgb(255, 64, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.voicerecognition {
+  width: 300px;
+  height: 43px;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.fa-microphone {
+  cursor: pointer;
+}
+.voicerecognition .searchinput {
+  border: none;
+  text-decoration: none;
+  outline: none;
+  padding: 3px;
+  background-color: #ffffff;
+  width: 210px;
+}
+.fa-microphone {
+  padding: 3px;
+}
+.document-body {
+  background-color: rgb(255, 255, 255);
+}
+.form-check-input:is(:checked) ~ .document-body {
+  background-color: rgb(5, 5, 5);
+}
+
+/*! =======================    nav section ends    ========================== */
+
+/** ============================    main content starts     ================== */
+.main-content {
+  width: auto;
+  /* height:190vh;
+ padding:5%;
+ background-color: #fcfcfc;
+ border-top-left-radius: 1rem;
+ border-top-right-radius: 1rem;
+ margin-top: 2%; */
+}
+/** ======================     main content ends  ============================ */
+
+/* * card  */
+div.card {
+  background-color: rgb(255, 255, 255);
+}
+/* *card end */
+/*! ========================   footer section    ============================= */
+.footer-section {
+  background-color: linear-gradient(135deg, #fdfbfb 10%, #ebedee 100%);
+}
+
+/*! ========================      footer section   ========================= */
+
+.image-cards {
+  height: 200px;
+  object-fit: cover;
+  /* max-width:90%; */
+}
+#navbar {
+  transition: 2s linear ease-in-out;
+}
+.readmore {
+  text-decoration: none;
+  padding: 10px;
+  height: 15px;
+  width: 80px;
+}
+.share-group {
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+/*! ================================ Division Section =============================== */
+.image-container-div img:hover {
+  transition: 2s ease-in-out;
+  transition-duration: 2s;
+  transform: scale(1.04);
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
+}
+.image-container-div {
+  transition: 0.5s ease all;
+  transition-duration: 1s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  overflow: hidden;
+}
+.image-container-div:hover ~ .image-container-div img {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+img {
+  transition: 0.5s ease all;
+  object-fit: cover;
+}
+.image-container-div:hover {
+  cursor: pointer;
+  transition: cubic-bezier(1, 0.82, 0.165, 1);
+  transform: scale(1.01);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+/* ! footer section */
+.footer-section {
+  z-index: 2;
+  background-color: rgba(255, 254, 254, 0.597);
+  backdrop-filter: blur(60px);
+}
+.elements {
+  width: 20px;
+  height: 20px;
+  color: dodgerblue;
+  cursor: pointer;
+}
+.elementx {
+  width: 20px;
+}
+/* .checkbox:checked + .card-body{
+ background-color:red;
+} */
+/* ! TAB search icons */
+.tabsearch {
+  border: none;
+  background-color: transparent;
+}

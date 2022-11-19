@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <title>page not Found ☹</title>
+</head>
+
+<body>
+    {% block body %}
+    <div class="news-container container-fluid h-90 d-block justify-content-center align-items-center m-auto">
+        <div class="errormsg m-auto d-flex justify-content-center">
+            <h2 class="text text-center col-12">☹ Results not found based on what you are looking for<br><span
+                    class="m-auto" style="color:green"> {{returned_input_search_value}}</span></h2>
+        </div>
+        <div class="news-container col-11 col-lg-1 col-md-4 m-auto h-4">
+            <!--some images -->
+            <img class="col-12  m-auto"
+                src="https://cloud-object-storage-18-cos-standard-w8a.s3.jp-tok.cloud-object-storage.appdomain.cloud/43391-404-error-page-not-found-confused-robot.gif"
+                alt="page not found">
+        </div>
+    </div>
+    {% endblock %}
+    <script src="{{url_for('static',filename='ApplicationFeatures/scrollReveal.js')}}"></script>
+</body>
+
+</html>
